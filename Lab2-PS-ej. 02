@@ -1,0 +1,10 @@
+Algoritmo tarea 2
+Definir total, precio, cantidad, totalfinal Como Real
+Escribir "ingrese el precio"
+Leer precio
+Escribir "ingrese cantidad"
+Leer cantidad
+total- precio*cantidad
+totalfinal=total*90/100
+Escribir "el precio es de", totalfinal
+FinAlgoritmo
