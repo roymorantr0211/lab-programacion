@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int numero, suma = 0;
+    
+    cout << "Ingrese un número entero: ";
+    cin >> numero;
+    
+    int temp = abs(numero);
+    
+    while (temp > 0) {
+        suma += temp % 10; 
+        temp /= 10;       
+    }
+    
+    cout << "La suma de los dígitos es: " << suma << endl;
+    
+    return 0;
+}
