@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long numero;
+    int sumaDigitos = 0;
+
+    cout << "Ingrese un numero: ";
+    cin >> numero;
+
+    long long temp = numero;
+    while (temp > 0) {
+        int digito = temp % 10;
+        sumaDigitos += digito;
+        temp /= 10;
+
+    cout << "La suma de los digitos es: " << sumaDigitos << endl;
+
+    return 0;
