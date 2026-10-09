@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long numero;
+    bool esOctalValido = true;
+
+    cout << "Ingrese un numero para validar en base 8: ";
+    cin >> numero;
+
+    long long temp = numero;
+    while (temp > 0) {
+        int digito = temp % 10;
+        if (digito >= 8) {
+            esOctalValido = false;
+            break;
+
+        temp /= 10;
+
+    if (esOctalValido) {
+        cout << "El numero " << numero << " es valido en base 8." << endl;
+    } else {
+        cout << "El numero " << numero << " es INVALIDO en base 8 (contiene digitos >= 8)." << endl;
+
+    return 0;
