@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long numero;
+    int pares = 0;
+    int suma = 0;
+    int umbralSuma = 15; // Valor umbral asignado para la prueba de seguridad
+
+    cout << "Ingrese el codigo numerico: ";
+    cin >> numero;
+
+    long long temp = numero;
+    while (temp > 0) {
+        int digito = temp % 10;
+        suma += digito;
+        if (digito % 2 == 0) {
+            pares++;
+      
+        temp /= 10;
+
+    cout << "Suma total de digitos: " << suma << endl;
+    cout << "Cantidad de digitos pares: " << pares << endl;
+
+    if (pares >= 2 && suma > umbralSuma) {
+        cout << "El codigo es SEGURO." << endl;
+    } else {
+        cout << "El codigo NO es seguro (requiere al menos 2 digitos pares y suma > " << umbralSuma << ")." << endl;
+
+    return 0;
