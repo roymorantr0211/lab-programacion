@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long numero;
+    int sumaHoras = 0;
+    int appsSuperan5h = 0;
+    int totalApps = 0;
+
+    cout << "Ingrese el numero de uso digital: ";
+    cin >> numero;
+
+    long long temp = numero;
+    while (temp > 0) {
+        int horas = temp % 10;
+        sumaHoras += horas;
+        totalApps++;
+        
+        if (horas > 5) {
+            appsSuperan5h++;
+      
+        temp /= 10;
+
+    if (totalApps > 0) {
+        double promedio = (double)sumaHoras / totalApps;
+        cout << "Total de horas: " << sumaHoras << "h" << endl;
+        cout << "Apps que superan las 5 horas: " << appsSuperan5h << endl;
+        cout << "Promedio de uso por app: " << promedio << "h" << endl;
+    } else {
+        cout << "No se ingresaron datos validos." << endl;
+
+    return;
