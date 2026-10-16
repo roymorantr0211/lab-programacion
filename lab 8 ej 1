@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+int leerEvaluaciones();
+double leerNota();
+double calcularPromedio(int cantEvaluaciones, bool &aprobado);
+void mostrarResultados(double promedio, bool aprobado);
+
+int main() {
+    int cantEvaluaciones;
+    double promedio;
+    bool aprobado;
+
+    cantEvaluaciones = leerEvaluaciones();
+    promedio = calcularPromedio(cantEvaluaciones, aprobado);
+    mostrarResultados(promedio, aprobado);
+
+    return 0;
+}
+
+int leerEvaluaciones() {
+    int cant;
+    do {
+        cout << "Ingrese la cantidad de evaluaciones: ";
+        cin >> cant;
+    } while (cant <= 0);
+    return cant;
+}
+
+double leerNota() {
+    double nota;
+    do {
+        cout << "Ingrese la nota obtenida (0 - 100): ";
+        cin >> nota;
+    } while (nota < 0 || nota > 100);
+    return nota;
+}
+
+double calcularPromedio(int cantEvaluaciones, bool &aprobado) {
+    int i;
+    double nota, suma, promedio;
+    suma = 0;
+
+    for (i = 1; i <= cantEvaluaciones; i++) {
+        cout << "\n Evaluacion " << i << endl;
+        nota = leerNota();
+        suma = suma + nota;
+    }
+
+    promedio = suma / cantEvaluaciones;
+
+    if (promedio >= 51) {
+        aprobado = true;
+    } else {
+        aprobado = false;
+    }
+
+    return promedio;
+}
+
+void mostrarResultados(double promedio, bool aprobado) {
+    cout << "\n================================" << endl;
+    cout << "       RESULTADOS FINALES       " << endl;
+    cout << "================================" << endl;
+    cout << "Promedio final: " << promedio << endl;
+    
+    if (aprobado) {
+        cout << "Estado: APROBADO (>= 51 puntos)" << endl;
+    } else {
+        cout << "Estado: REPROBADO (< 51 puntos)" << endl;
+    }
+}
